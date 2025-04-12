@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:tally/screens/add.dart';
 import 'package:tally/tools.dart';
 
 class Home extends StatefulWidget {
@@ -18,6 +19,13 @@ class _HomeState extends State<Home> {
       backgroundColor: bgcolor,
       appBar: AppBar(
         backgroundColor: bgcolor,
+        title: Text(
+            "9999 pts",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+            ),
         actions: [
           IconButton.filled(
             color: Colors.black,
@@ -45,7 +53,7 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
-                  onTap: () => print("hello"),
+                  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => Add()));},
                   child: Container(
                     width: screenwidth*0.45,
                     height: screenwidth*0.13,
@@ -120,11 +128,19 @@ class _HomeState extends State<Home> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  "Task $index",
-                                  style: TextStyle(
-                                    fontSize: 18
-                                  ),
+                                Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: (){}, 
+                                      icon: Icon(Icons.check_box_outline_blank)
+                                      ),
+                                    Text(
+                                      "Task $index",
+                                      style: TextStyle(
+                                        fontSize: 18
+                                      ),
+                                    ),
+                                  ],
                                 ),
 
                                 Row(
