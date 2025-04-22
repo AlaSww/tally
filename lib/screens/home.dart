@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
       backgroundColor: bgcolor,
       appBar: AppBar(
         backgroundColor: bgcolor,
+        automaticallyImplyLeading: false,
         title: Text(
             "9999 pts",
             style: TextStyle(
@@ -29,8 +30,11 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton.filled(
             color: Colors.black,
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.blue),
+            ),
             onPressed: (){}, 
-            icon: Icon(Icons.person_4)
+            icon: Icon(Icons.person_4,color: Colors.white,)
             )
         ],
       ),
